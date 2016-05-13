@@ -1,1 +1,49 @@
+h1{
+	color:red;
+}
 
+
+
+#tab {
+  width: 1600px;
+  height: 300px;
+  background-color: white;
+  padding: 10px;
+}
+.part {
+  width: 800px;
+  height: 80px;
+  float: left;
+  background-color: white;
+}
+.table-part {
+  cellspacing: 0px;
+  width: 100%;
+  height: 100%;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  table-layout: fixed;
+}
+td {
+  text-align: center;
+  height: 20px;
+  padding: 0px;
+}
+.empty-note {
+  float: left;
+  width: 100%;
+  height: 1px;
+  background-color: black;
+}
+.filled-note {
+  float: left;
+  width: 50%;
+  text-align: center;
+}
+.note-border {
+  margin-top: 8px;
+  float: left;
+  width: 25%;
+  height: 1px;
+  background-color: black;
+}
