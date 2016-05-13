@@ -2,7 +2,8 @@ package com.cascau.hodor.service;
 
 import com.cascau.hodor.contract.PrepareSongAS;
 import com.cascau.hodor.contract.SongRepresentaionResponse;
-import java.util.Map;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ResourceLoader;
 
 /**
  *
@@ -10,23 +11,11 @@ import java.util.Map;
  */
 public class PrepareSongASImpl implements PrepareSongAS {
 
-    private Map notesMap;
-    
     @Override
     public SongRepresentaionResponse prepareSong() {
-        return mockJson();
+        return new SongRepresentaionResponse();
     }
 
-    public Map getNotesMap() {
-        return notesMap;
-    }
-
-    public void setNotesMap(Map notesMap) {
-        this.notesMap = notesMap;
-    }
-    
-    private SongRepresentaionResponse mockJson() {
-        
-        return null;
-    }
+    @Autowired
+    private ResourceLoader resourceLoader;
 }
