@@ -41,4 +41,11 @@
         <!-- A chord -->
         <entry key="E0" value="classpath*:A5.mp3" />
     </util:map>
+    
+    <beans:bean id="dataSource" class="org.springframework.jdbc.datasource.SingleConnectionDataSource">
+    	<beans:property name="driverClassName" value="com.mysql.jdbc.Driver" />
+    	<beans:property name="url" value="jdbc:mysql://192.168.248.153:3306/ochomuerte" />
+    	<beans:property name="username" value="root" />
+    	<beans:property name="password" value="123456" />
+    </beans:bean>
 </beans>
