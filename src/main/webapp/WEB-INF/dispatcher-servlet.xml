@@ -1,7 +1,12 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans 
-	http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+                           http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
+                           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+                           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
     
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
         <property name="prefix">
@@ -17,4 +22,23 @@
     </bean> 
     
     <bean id="ocm.PrepareSongAS" class="com.cascau.hodor.service.PrepareSongASImpl" />
+    
+    <util:map id="ocm.notesMap" map-class="java.util.HashMap">
+        <!-- E chord -->
+        <entry key="E0" value="classpath*:E0.mp3" />
+        <entry key="E1" value="classpath*:E1.mp3" />
+        <entry key="E2" value="classpath*:E2.mp3" />
+        <entry key="E3" value="classpath*:E3.mp3" />
+        <entry key="E4" value="classpath*:E4.mp3" />
+        <entry key="E5" value="classpath*:E5.mp3" />
+        <entry key="E6" value="classpath*:E6.mp3" />
+        <entry key="E7" value="classpath*:E7.mp3" />
+        <entry key="E8" value="classpath*:E8.mp3" />
+        <entry key="E9" value="classpath*:E9.mp3" />
+        <entry key="E10" value="classpath*:E10.mp3" />
+        <entry key="E11" value="classpath*:E11.mp3" />
+        <entry key="E12" value="classpath*:E12.mp3" />
+        <!-- A chord -->
+        <entry key="E0" value="classpath*:A5.mp3" />
+    </util:map>
 </beans>
