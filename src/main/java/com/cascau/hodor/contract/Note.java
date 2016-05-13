@@ -7,6 +7,8 @@ package com.cascau.hodor.contract;
 public class Note {
 
     private String name;
+    private Integer position;
+    private String chord;
 
     public String getName() {
         return name;

@@ -21,7 +21,9 @@
         <property name="prepareSongAS" ref="ocm.PrepareSongAS" />
     </bean> 
     
-    <bean id="ocm.PrepareSongAS" class="com.cascau.hodor.service.PrepareSongASImpl" />
+    <bean id="ocm.PrepareSongAS" class="com.cascau.hodor.service.PrepareSongASImpl">
+        <property name="notesMap" ref="ocm.notesMap" />
+    </bean>
     
     <util:map id="ocm.notesMap" map-class="java.util.HashMap">
         <!-- E chord -->
@@ -39,7 +41,47 @@
         <entry key="E11" value="classpath*:E11.mp3" />
         <entry key="E12" value="classpath*:E12.mp3" />
         <!-- A chord -->
-        <entry key="E0" value="classpath*:A5.mp3" />
+        <entry key="A0" value="classpath*:E5.mp3" />
+        <entry key="A1" value="classpath*:E6.mp3" />
+        <entry key="A2" value="classpath*:E7.mp3" />
+        <entry key="A3" value="classpath*:A8.mp3" />
+        <entry key="A4" value="classpath*:A9.mp3" />
+        <entry key="A5" value="classpath*:A10.mp3" />
+        <entry key="A6" value="classpath*:A11.mp3" />
+        <entry key="A7" value="classpath*:A12.mp3" />
+        <entry key="A8" value="classpath*:E8.mp3" />
+        <entry key="A9" value="classpath*:E9.mp3" />
+        <entry key="A10" value="classpath*:E10.mp3" />
+        <entry key="A11" value="classpath*:E11.mp3" />
+        <entry key="A12" value="classpath*:E12.mp3" />
+        <!-- D chord -->
+        <entry key="D0" value="classpath*:A5.mp3" />
+        <entry key="D1" value="classpath*:A6.mp3" />
+        <entry key="D2" value="classpath*:A7.mp3" />
+        <entry key="D3" value="classpath*:A8.mp3" />
+        <entry key="D4" value="classpath*:A9.mp3" />
+        <entry key="D5" value="classpath*:A10.mp3" />
+        <entry key="D6" value="classpath*:A11.mp3" />
+        <entry key="D7" value="classpath*:A12.mp3" />
+        <entry key="D8" value="classpath*:D8.mp3" />
+        <entry key="D9" value="classpath*:D9.mp3" />
+        <entry key="D10" value="classpath*:D10.mp3" />
+        <entry key="D11" value="classpath*:D11.mp3" />
+        <entry key="D12" value="classpath*:D12.mp3" />
+        <!-- G chord -->
+        <entry key="G0" value="classpath*:D5.mp3" />
+        <entry key="G1" value="classpath*:D6.mp3" />
+        <entry key="G2" value="classpath*:D7.mp3" />
+        <entry key="G3" value="classpath*:D8.mp3" />
+        <entry key="G4" value="classpath*:D9.mp3" />
+        <entry key="G5" value="classpath*:D10.mp3" />
+        <entry key="G6" value="classpath*:D11.mp3" />
+        <entry key="G7" value="classpath*:D12.mp3" />
+        <entry key="G8" value="classpath*:G8.mp3" />
+        <entry key="G9" value="classpath*:G9.mp3" />
+        <entry key="G10" value="classpath*:G10.mp3" />
+        <entry key="G11" value="classpath*:G11.mp3" />
+        <entry key="G12" value="classpath*:G12.mp3" />
     </util:map>
     
     <beans:bean id="dataSource" class="org.springframework.jdbc.datasource.SingleConnectionDataSource">
