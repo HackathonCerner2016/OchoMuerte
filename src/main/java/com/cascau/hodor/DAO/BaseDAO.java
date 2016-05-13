@@ -19,7 +19,7 @@ public abstract class BaseDAO {
 
     protected CallableStatement callableStatement;
     protected static Connection connection;
-    protected static SingleConnectionDataSource singleCOnnectionDataSource;
+    protected static SingleConnectionDataSource singleConnectionDataSource;
 
     static {
         initConnection();
@@ -27,8 +27,8 @@ public abstract class BaseDAO {
 
     private static void initConnection() {
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("dispatcher-servlet.xml");
-        singleCOnnectionDataSource = (SingleConnectionDataSource) applicationContext.getBean("dataSource", SingleConnectionDataSource.class);
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(singleCOnnectionDataSource);
+        singleConnectionDataSource = (SingleConnectionDataSource) applicationContext.getBean("dataSource", SingleConnectionDataSource.class);
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(singleConnectionDataSource);
         try {
             connection = jdbcTemplate.getDataSource().getConnection();
         } catch (Exception e) {
@@ -38,8 +38,10 @@ public abstract class BaseDAO {
         //test stuff - to be removed
         if(connection != null){
             System.out.println("Connected!");
+            
         }else{
             System.out.println("Terribly failed :( !");
         }
+        //end of end stuff
     }
 }
