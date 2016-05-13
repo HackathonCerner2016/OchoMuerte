@@ -18,38 +18,38 @@ import org.springframework.jdbc.datasource.SingleConnectionDataSource;
  */
 public class BaseDAO {
 
-    protected CallableStatement callableStatement;
-    protected Connection connection;
-    protected SingleConnectionDataSource singleConnectionDataSource;
-
-
-    public BaseDAO() {
-        
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-        try {
-            connection = jdbcTemplate.getDataSource().getConnection();
-        } catch (Exception e) {
-
-        }
-        
-        //test stuff - to be removed
-        if(connection != null){
-            System.out.println("Connected Mircea mrr!");
-            
-        }else{
-            System.out.println("Terribly failed :( !");
-        }
-        //end of end stuff
-    }
-    
-    private DataSource dataSource;
-
-    public DataSource getDataSource() {
-        return dataSource;
-    }
-
-    public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
-    }
+//    protected CallableStatement callableStatement;
+//    protected Connection connection;
+//    protected SingleConnectionDataSource singleConnectionDataSource;
+//
+//
+//    public BaseDAO() {
+//        
+//        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+//        try {
+//            connection = jdbcTemplate.getDataSource().getConnection();
+//        } catch (Exception e) {
+//
+//        }
+//        
+//        //test stuff - to be removed
+//        if(connection != null){
+//            System.out.println("Connected Mircea mrr!");
+//            
+//        }else{
+//            System.out.println("Terribly failed :( !");
+//        }
+//        //end of end stuff
+//    }
+//    
+//    private DataSource dataSource;
+//
+//    public DataSource getDataSource() {
+//        return dataSource;
+//    }
+//
+//    public void setDataSource(DataSource dataSource) {
+//        this.dataSource = dataSource;
+//    }
     
 }

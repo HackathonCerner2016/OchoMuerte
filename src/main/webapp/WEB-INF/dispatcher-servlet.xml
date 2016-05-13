@@ -3,10 +3,12 @@
        xmlns:util="http://www.springframework.org/schema/util"
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
                            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
                            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
-                           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+                           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+                           http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
     
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
         <property name="prefix">
@@ -17,23 +19,14 @@
         </property>
     </bean>
     
-        <bean id="ocm.MainController" class="com.cascau.hodor.controller.MainController">
+    <mvc:annotation-driven/>
+    <mvc:resources mapping="/style/" location="/style/**" />
+    
+    <bean id="ocm.MainController" class="com.cascau.hodor.controller.MainController">
         <property name="prepareSongAS" ref="ocm.PrepareSongAS" />
     </bean> 
     
     <bean id="ocm.PrepareSongAS" class="com.cascau.hodor.service.PrepareSongASImpl" />
-   
-    
-    <bean id="ocm.DataSource" class="org.springframework.jdbc.datasource.SingleConnectionDataSource">
-    	<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-    	<property name="url" value="jdbc:mysql://192.168.248.153:3306/ochomuerte" />
-    	<property name="username" value="root" />
-    	<property name="password" value="123456" />
-    </bean>
-    
-    <bean id="ocm.BaseDAO" class="com.cascau.hodor.DAO.BaseDAO" >
-        <property name="dataSource" ref="ocm.DataSource" />
-    </bean>
     <import resource="springBeans/notesDefinition.xml" />
     
 
