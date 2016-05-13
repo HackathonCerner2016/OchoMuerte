@@ -9,10 +9,24 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+		
+		<spring:url value="/style/main.css" var="mainCss" />
+		<spring:url value="/script/jquery.js" var="jqueryJs" />
+		<spring:url value="/script/main.js" var="mainJs" />
+		
+		<link href="${mainCss}" rel="stylesheet" />
+		<script src="${jqueryJs}"></script>
+		<script src="${mainJs}"></script>
+		
+        <title>OchoMuerte</title>
     </head>
     <body>
         hello.jsp
         ${song}
+		
+		<h1>1. Test CSS</h1>
+
+		<h2>2. Test JS</h2>
+		<div id="msg"></div>
     </body>
 </html>
