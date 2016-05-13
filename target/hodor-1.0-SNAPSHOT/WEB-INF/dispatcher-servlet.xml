@@ -3,10 +3,12 @@
        xmlns:util="http://www.springframework.org/schema/util"
        xmlns:tx="http://www.springframework.org/schema/tx"
        xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
                            http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.5.xsd
                            http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
-                           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd">
+                           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+                           http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
     
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver" >
         <property name="prefix">
@@ -16,14 +18,14 @@
             <value>.jsp</value>
         </property>
     </bean>
-
-    <bean class="com.cascau.hodor.controller.MainController">
+    
+    <import resource="springBeans/notesDefinition.xml" />
+    
+    <bean id="ocm.MainController" class="com.cascau.hodor.controller.MainController">
         <property name="prepareSongAS" ref="ocm.PrepareSongAS" />
     </bean> 
     
     <bean id="ocm.PrepareSongAS" class="com.cascau.hodor.service.PrepareSongASImpl" />
     
-    <import resource="springBeans/notesDefinition.xml" />
-    <import resource="springBeans/dbconnection.xml" />
 
 </beans>
