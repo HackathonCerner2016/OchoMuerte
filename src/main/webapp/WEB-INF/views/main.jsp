@@ -12,16 +12,17 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>OchoMuerte</title>
     </head>
-    <body>
-        ${song}
-
-        <h1>1. Test CSS</h1>
-
-        <h2>2. Test JS</h2>
-        <div id="msg"></div>
-			
+    <body>	
+        
+        <div id="playStuff"></div>
+        <div id="pageWrapper"></div>
+        
 	<script type="text/javascript">
-            testing(5, 10);
+            var str = '{ "songParts":[ { "bpm":"120", "notes":"8", "values": [ { "chord":"A", "position":"0", "name":"A0" }, { "chord":"E", "position":"3", "name":"E3" }, { "chord":"E", "position":"3", "name":"E3" }, { "chord":"", "position":"", "name":"" }, { "chord":"D", "position":"5", "name":"D5" }, { "chord":"A", "position":"0", "name":"A0" }, { "chord":"", "position":"", "name":"" }, { "chord":"E", "position":"0", "name":"E0" }] } ] }';
+            buildSongPartArray(str);
         </script>
+        
+        
+        
     </body>
 </html>
