@@ -19,15 +19,13 @@
         </property>
     </bean>
     
-    <mvc:annotation-driven/>
-    <mvc:resources mapping="/style/" location="/style/**" />
+    <import resource="springBeans/notesDefinition.xml" />
     
     <bean id="ocm.MainController" class="com.cascau.hodor.controller.MainController">
         <property name="prepareSongAS" ref="ocm.PrepareSongAS" />
     </bean> 
     
     <bean id="ocm.PrepareSongAS" class="com.cascau.hodor.service.PrepareSongASImpl" />
-    <import resource="springBeans/notesDefinition.xml" />
     
 
 </beans>

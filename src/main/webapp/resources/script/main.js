@@ -7,7 +7,7 @@
 
 jQuery(document).ready(function($) {
 
-	alert("Great things happen !");
+//	alert("Great things happen !");
 	//$('#msg').html("This is updated by jQuery")
 
 });
