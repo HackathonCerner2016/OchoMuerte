@@ -9,6 +9,8 @@ import java.util.List;
  */
 public class SongRepresentaionResponse implements Serializable {
 
+    public static final Long serialVersionUID = 123456789L;
+    
     private List<SongPart> songParts;
 
     public List<SongPart> getSongParts() {
