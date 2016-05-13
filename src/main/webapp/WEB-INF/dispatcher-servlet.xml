@@ -16,14 +16,25 @@
             <value>.jsp</value>
         </property>
     </bean>
-
-    <bean class="com.cascau.hodor.controller.MainController">
+    
+        <bean id="ocm.MainController" class="com.cascau.hodor.controller.MainController">
         <property name="prepareSongAS" ref="ocm.PrepareSongAS" />
     </bean> 
     
     <bean id="ocm.PrepareSongAS" class="com.cascau.hodor.service.PrepareSongASImpl" />
+   
     
+    <bean id="ocm.DataSource" class="org.springframework.jdbc.datasource.SingleConnectionDataSource">
+    	<property name="driverClassName" value="com.mysql.jdbc.Driver" />
+    	<property name="url" value="jdbc:mysql://192.168.248.153:3306/ochomuerte" />
+    	<property name="username" value="root" />
+    	<property name="password" value="123456" />
+    </bean>
+    
+    <bean id="ocm.BaseDAO" class="com.cascau.hodor.DAO.BaseDAO" >
+        <property name="dataSource" ref="ocm.DataSource" />
+    </bean>
     <import resource="springBeans/notesDefinition.xml" />
-    <import resource="springBeans/dbconnection.xml" />
+    
 
 </beans>

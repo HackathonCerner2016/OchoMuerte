@@ -10,4 +10,12 @@ import java.util.List;
 public class SongRepresentaionResponse implements Serializable {
 
     private List<SongPart> songParts;
+
+    public List<SongPart> getSongParts() {
+        return songParts;
+    }
+
+    public void setSongParts(List<SongPart> songParts) {
+        this.songParts = songParts;
+    }
 }
