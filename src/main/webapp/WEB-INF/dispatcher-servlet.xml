@@ -12,5 +12,9 @@
         </property>
     </bean>
 
-    <bean class="com.cascau.hodor.MainController" /> 
+    <bean class="com.cascau.hodor.controller.MainController">
+        <property name="prepareSongAS" ref="ocm.PrepareSongAS" />
+    </bean> 
+    
+    <bean id="ocm.PrepareSongAS" class="com.cascau.hodor.service.PrepareSongASImpl" />
 </beans>
