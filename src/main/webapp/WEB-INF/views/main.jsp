@@ -3,6 +3,7 @@
     Created on : May 3, 2016, 12:23:01 AM
     Author     : cascau_neinvinsu
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -19,7 +20,9 @@
         <title>OchoMuerte</title>
     </head>
     <body>
-        ${song}
+        <c:forEach var="songs" items="${song.songParts}">
+            ${songs.songPart} <br />
+        </c:forEach>
 
         <h1>1. Test CSS</h1>
 
