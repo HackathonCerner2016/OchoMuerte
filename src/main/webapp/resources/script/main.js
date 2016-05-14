@@ -4,9 +4,6 @@ function buildSongPartArray(jsString) {
     
     console.log(song);                              // debug
     
-    var elem = document.getElementById("myAudio1");
-    elem.play();
-    
     $.each(songParts, function(i, i_val) 
     { 
         $('#pageWrapper').append('<div class="songPart" id="songPart'+i+'"></div>');
@@ -95,6 +92,9 @@ function cursorMovemenet() {
             top: position.top+(Math.floor(count / 8) * 120)-10 + "px",
             left: position.left+(count % 8 * 100)+48 + "px"
         }).show();
+        
+        var elem = document.getElementById("myAudio"+((count)%8+1));
+        elem.play();
         
         if (count < 47)
         {
