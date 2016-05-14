@@ -74,9 +74,7 @@ public class PrepareSongASImpl implements PrepareSongAS {
         
         part.setNotes(notes);   
         songParts.add(part);
-        
-        songParts = new ArrayList<>();
-        
+               
         part = new SongPart();
         part.setBpm(120);
         part.setNotesNumber(8);
