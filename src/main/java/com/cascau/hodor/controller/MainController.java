@@ -7,6 +7,7 @@ package com.cascau.hodor.controller;
 
 import com.cascau.hodor.contract.PrepareSongAS;
 import com.cascau.hodor.contract.SongRepresentaionResponse;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -39,54 +40,58 @@ public class MainController {
         
         //test audio mockup added*********************************************************************
         //get the filename from the "file" parameter
-        String fileName = "C:\\Users\\MI043912\\Documents\\GitHub\\OchoMuerte\\src\\main\\resources\\midi\\1.mp3";
-      
-        // add the .mp3 suffix if it doesn't already exist
-        if (fileName.indexOf(".mp3") == -1)
-           fileName = fileName + ".mp3";
-          
-        BufferedInputStream buf = null;
-        try{
-     
-            stream = httpResponse.getOutputStream();
-            File mp3 = new File(fileName);
-     
-            //set response headers
-            httpResponse.setContentType("audio/mpeg");
-      
-            httpResponse.addHeader(
-            "Content-Disposition","attachment; filename="+"1.mp3" );
-                                                        //^^^^^ HARD CODED!!!!!!!!!1
-            httpResponse.setContentLength( (int) mp3.length() );
-      
-            FileInputStream input = new FileInputStream(mp3);
-            buf = new BufferedInputStream(input);
-            int readBytes = 0;
-
-            
-            //read from the file; write to the ServletOutputStream
-            while((readBytes = buf.read( )) != -1){
-                System.out.println(readBytes);
-                stream.write(readBytes);
-            }
-           // WriteWaveFileHeader(stream, input.getChannel().size(), readBytes, 44100, 2, 176400);
-        } catch (IOException ioe){
-     
-            throw new ServletException(ioe.getMessage( ));
-         
-        } finally {
-     
-            //close the input/output streams
-            if(stream != null)
-                stream.close();
-
-            if(buf != null)
-                buf.close();
-
-          }
+//        String fileName = "C:\\Users\\MI043912\\Documents\\GitHub\\OchoMuerte\\src\\main\\resources\\midi\\1.mp3";
+//      
+//        // add the .mp3 suffix if it doesn't already exist
+//        if (fileName.indexOf(".mp3") == -1)
+//           fileName = fileName + ".mp3";
+//          
+//        BufferedInputStream buf = null;
+//        try{
+//     
+//            stream = httpResponse.getOutputStream();
+//            File mp3 = new File(fileName);
+//     
+//            //set response headers
+//            httpResponse.setContentType("audio/mpeg");
+//      
+//            httpResponse.addHeader(
+//            "Content-Disposition","attachment; filename="+"1.mp3" );
+//                                                        //^^^^^ HARD CODED!!!!!!!!!1
+//            httpResponse.setContentLength( (int) mp3.length() );
+//      
+//            FileInputStream input = new FileInputStream(mp3);
+//            buf = new BufferedInputStream(input);
+//            int readBytes = 0;
+//
+//            
+//            //read from the file; write to the ServletOutputStream
+//            while((readBytes = buf.read( )) != -1){
+//                System.out.println(readBytes);
+//                stream.write(readBytes);
+//            }
+//           // WriteWaveFileHeader(stream, input.getChannel().size(), readBytes, 44100, 2, 176400);
+//        } catch (IOException ioe){
+//     
+//            throw new ServletException(ioe.getMessage( ));
+//         
+//        } finally {
+//     
+//            //close the input/output streams
+//            if(stream != null)
+//                stream.close();
+//
+//            if(buf != null)
+//                buf.close();
+//
+//          }
         //end of audio added stuff********************************************************************
         
-        response.addObject("song", song);
+        ObjectMapper mapper = new ObjectMapper();
+        //Object to JSON in file
+        mapper.writeValue(new File("C:\\Users\\"+ System.getProperty("user.name") + "\\file.json"), song);
+        
+        response.addObject("song", mapper);
         
         response.setViewName(VIEW_NAME);
         return response;
