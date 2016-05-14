@@ -14,6 +14,9 @@ function buildSongPartArray(jsString) {
     
     console.log(song);                              // debug
     
+    var elem = document.getElementById("myAudio1");
+    elem.play();
+    
     $.each(songParts, function(i, i_val) 
     { 
         $('#pageWrapper').append('<div class="songPart" id="songPart'+i+'"></div>');
