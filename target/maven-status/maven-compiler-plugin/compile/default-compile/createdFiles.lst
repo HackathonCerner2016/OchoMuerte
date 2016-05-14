@@ -1,8 +1,8 @@
+com\cascau\hodor\DAO\ChordsEnum.class
 com\cascau\hodor\contract\PrepareSongAS.class
+com\cascau\hodor\DAO\PositionEnum.class
 com\cascau\hodor\contract\Note.class
-com\cascau\hodor\DAO\BaseDAO.class
 com\cascau\hodor\service\PrepareSongASImpl.class
-com\cascau\hodor\DAO\TestDAO.class
 com\cascau\hodor\contract\SongPart.class
 com\cascau\hodor\controller\MainController.class
 com\cascau\hodor\contract\SongRepresentaionResponse.class

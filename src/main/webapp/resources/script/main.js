@@ -1,16 +1,6 @@
-//jQuery(document).ready(function($) {
-//
-//$('#pageWrapper').append("o propozitie");
-//	//$('#msg').html("This is updated by jQuery")
-//        // might use it 
-//        
-//});
-
 function buildSongPartArray(jsString) {
     var song = JSON.parse(jsString);
     var songParts = song.songParts;
-    var bpm = 0;
-    var noteNr = 0;
     
     console.log(song);                              // debug
     
@@ -82,14 +72,36 @@ function buildSongPartArray(jsString) {
                     
             }
             
-            
-            
-            //j_val.chord
-            //'+j_val.position+'
-            //j_val.name
         });
         
-        //$('#pageWrapper').append('<li>' + value.bpm + '</li>');
     });
+    
+}
+
+function cursorMovemenet() {
+    
+    var count = 0;
+    
+    var position = $('#rowG0').offset();
+    console.log(position);
+    
+    var shit = setInterval(function(){ 
+        
+        $("#slider").css({
+            position: "absolute",
+            top: position.top+(Math.floor(count / 8) * 120)-10 + "px",
+            left: position.left+(count % 8 * 100)+48 + "px"
+        }).show();
+        
+        if (count < 47)
+        {
+            count++;
+        }
+        else
+        {
+            clearInterval(shit);
+        }
+    }, 500);
+    
     
 }
